@@ -14,6 +14,7 @@ We are inviting interested enthusiasts to register as a host. As an Evernode bet
 To reduce our testing and development overhead, during the beta, we require your server to meet following minimum requirements:
   - Operating system: **Ubuntu 20.04 (64 bit)**
   - RAM: **2 GB** minimum
+  - Swap: **2 GB** minimum
   - Disk space: **4 GB** minimum free disk space for /home
 
 ## Important tips
