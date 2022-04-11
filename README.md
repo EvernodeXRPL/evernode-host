@@ -5,7 +5,7 @@
   - Hosts register on the **Evernode registry**, a well-known XRPL account published by Evernode foundation.
   - Hosts lease smart contract hosting to **Evernode tenants** in exchange for **Evers (EVR)**.
 
-_All of the above are automated by **Sashimono**, Evernode host management software which gets installed when you run the [Evernode setup](#running-the-setup)._
+_All of the above are automated by **Sashimono**, Evernode host management software which gets installed when you run the [Evernode installer](#installation)._
 
 # Evernode beta
 We are inviting interested enthusiasts to register as an Evernode host. As an Evernode beta host, your Linux server will be registered on the XRPL NFT Devnet. During the installation, you can choose how much system resources you wish to allocate for smart contract hosting. After everything is setup, your server will start leasing hosting space to Evernode tenants.
@@ -53,3 +53,6 @@ For monitoring and maintenance, you can use following commands:
   - `sashi` - Sashimono CLI for advanced operations and monitoring. Use `sashi -h` for help.
 
 At any time, you can uninstall and deregister from Evernode with `evernode uninstall`.
+
+## Reporting issues
+Please report any issues and error logs [here](https://github.com/HotPocketDev/evernode-host/issues).
