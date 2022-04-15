@@ -52,6 +52,8 @@ For monitoring and maintenance, you can use following commands:
   - `evernode update` - Apply Evernode beta software updates.
   - `sashi` - Sashimono CLI for advanced operations and monitoring. Use `sashi -h` for help.
 
+Note: `sudo` access is required for `status`, `update` and `uninstall` commands.
+
 At any time, you can uninstall and deregister from Evernode with `evernode uninstall`.
 
 ## Reporting issues
