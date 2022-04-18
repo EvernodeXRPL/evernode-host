@@ -56,5 +56,8 @@ Note: `sudo` access is required for `status`, `update` and `uninstall` commands.
 
 At any time, you can uninstall and deregister from Evernode with `evernode uninstall`.
 
-## Reporting issues
+# Reporting issues
 Please report any issues and error logs [here](https://github.com/HotPocketDev/evernode-host/issues).
+
+# Global hosts index
+We maintain an indexed data set of hosts that register on Evernode. You can access it [here](https://firestore.googleapis.com/v1/projects/evernodeindex/databases/(default)/documents/rHQQq5aJ5kxFyNJXE36rAmuhxpDvpLHcWq_hosts) and check whether your host is in it (you can get your host XRPL account address via `evernode status`).
