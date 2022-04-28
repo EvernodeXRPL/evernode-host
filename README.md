@@ -50,7 +50,7 @@ For monitoring and maintenance, you can use following commands:
   - `evernode status` - Display your current registration status and Ever balance in your account.
   - `evernode list` - Display a list of smart contracts running on your host.
   - `evernode update` - Apply Evernode beta software updates.
-  - `evernode log` - Generate evernode log file
+  - `evernode log` - Generate Evernode log file
   - `sashi` - Sashimono CLI for advanced operations and monitoring. Use `sashi -h` for help.
 
 Note: `sudo` access is required for `update`, `log` and `uninstall` commands.
