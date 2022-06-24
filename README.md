@@ -10,7 +10,7 @@ _All of the above are automated by **Sashimono**, Evernode host management softw
 # Evernode beta
 We are inviting interested enthusiasts to register as an Evernode host. As an Evernode beta host, your Linux server will be registered on the XRPL NFT Devnet. During the installation, you can choose how much system resources you wish to allocate for smart contract hosting. After everything is setup, your server will start leasing hosting space to Evernode tenants.
 
-> **Devnet warning:** Since Evernode beta uses **XRPL NFT Devnet**, Evernode registry and your registration may get wiped out without prior notice. In such cases we will have to spin up a new registry before you can reinstall Evernode and become part of our beta network again.
+> **Testnet warning:** Since Evernode beta uses [XRPL Hooks v2 testnet](https://hooks-testnet-v2.xrpl-labs.com/), it is subjected to any changes/downtime imposed by the hooks testnet.
 
 ## Evernode beta licence
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to use the software for, or in connection, with the Evernode network for the duration of the beta test.
@@ -60,5 +60,5 @@ At any time, you can uninstall and deregister from Evernode with `evernode unins
 # Reporting issues
 Please report any issues and error logs [here](https://github.com/HotPocketDev/evernode-host/issues).
 
-# Global hosts index
-We maintain an indexed data set of hosts that register on Evernode. You can access it [here](https://firestore.googleapis.com/v1/projects/evernodeindex/databases/(default)/documents/rHQQq5aJ5kxFyNJXE36rAmuhxpDvpLHcWq_hosts) and check whether your host is in it (you can get your host XRPL account address via `evernode status`).
+# Global hosts dashboard
+We maintain a dashboard containing all registered Evernode hosts. You can access it at [dashboard.evernode.org](https://dashboard.evernode.org/).
