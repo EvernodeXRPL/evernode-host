@@ -8,7 +8,7 @@
 _All of the above are automated by **Sashimono**, Evernode host management software which gets installed when you run the [Evernode installer](#installation)._
 
 # Evernode beta
-We are inviting interested enthusiasts to register as an Evernode host. As an Evernode beta host, your Linux server will be registered on the XRPL NFT Devnet. During the installation, you can choose how much system resources you wish to allocate for smart contract hosting. After everything is setup, your server will start leasing hosting space to Evernode tenants.
+We are inviting interested enthusiasts to register as an Evernode host. As an Evernode beta host, your Linux server will be registered on the [XRPL Hooks v2 testnet](https://hooks-testnet-v2.xrpl-labs.com/). During the installation, you can choose how much system resources you wish to allocate for smart contract hosting. After everything is setup, your server will start leasing hosting space to Evernode tenants.
 
 > **Testnet warning:** Since Evernode beta uses [XRPL Hooks v2 testnet](https://hooks-testnet-v2.xrpl-labs.com/), it is subjected to any changes/downtime imposed by the hooks testnet.
 
@@ -37,7 +37,7 @@ To reduce testing and development overhead, during the beta, we require your ser
   - You can use a phyisical or virtual (VPS) Linux server as your Evernode host. **[WSL](https://docs.microsoft.com/en-us/windows/wsl/about) is not supported**.
   - It's recommended that you use a server which DOES NOT contain other workloads important to you. It's best if you can provision a fresh VPS from a cloud provider which you can dedicate for Evernode beta and dispose of easily when no longer required.
   - Based on the smart contracts that are hosted on your server, you server will accumulate network usage while its operating. During the early days of the beta, this will be minimal (eg. less than 50 GB per month). Even as the beta network grows, we predict that this will be well within the basic data transfer allowances of most cloud VPS providers (eg. 500 - 1000 GB per month). However, we recommend you to monitor the network usage or set upper limits to avoid unpredictable costs.
-  - **Firewalls and ports** - Evernode software itself does not require any ports to be opened. However the smart contracts that are getting hosted on your host requires ports to be opened and incoming traffic be allowed to those ports. Evernode automatically adds the required allow-rules to the operating system firewall. But if your host is behind an external firewall you need to allow incoming TCP traffic to the ncessary ports ranges. There are two port ranges which by default starts at 8081 and 22861. If your host supports `n` contract instances, the port ranges to allow would be `8081 to 8081+n` and `22861 to 22861+n`.
+  - **Firewalls and ports** - Evernode software itself does not require any ports to be opened. However the smart contracts that are getting hosted on your host requires ports to be opened and incoming traffic be allowed to those ports. Evernode automatically adds the required allow-rules to the operating system firewall. But if your host is behind an external firewall you need to allow incoming TCP traffic to the ncessary ports ranges. There are two port ranges which by default starts at 8081 and 22861. If your host supports `n` contract instances, the port ranges to allow would be `26201 to 26201+n` and `22861 to 22861+n`.
 
 Run the following command to install Evernode beta on your Linux server. You need root (sudo) access for this.
 
