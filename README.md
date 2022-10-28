@@ -27,7 +27,7 @@ Evernode Foundation may, in its absolute discretion, airdrop a portion of its Ev
 
 ## System requirements
 To reduce testing and development overhead, during the beta, we require your server to meet following requirements:
-  - Operating system: **Ubuntu 20.04** (64 bit)
+  - Operating system: **Ubuntu 20.04** (64 bit - M1/ARM CPUs not supported)
   - RAM: **2 GB** minimum
   - Swap: **2 GB** minimum
   - Disk space: **4 GB** minimum free disk space for `/home`
