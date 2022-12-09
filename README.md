@@ -32,6 +32,10 @@ To reduce testing and development overhead, during the beta, we require your ser
   - Swap: **2 GB** minimum
   - Disk space: **4 GB** minimum free disk space for `/home`
   - Publicly accessible IP/DNS
+  - Existing XRPL account with an EVR balance greater than 5120 (use [this page](https://dashboard.evernode.org/#/testnet-faucet) to generate a testnet account with EVR balance).
+  
+### Upcoming requirement changes
+In an upcoming release, we will require a domain name (eg. myhost.myhosting.org) which can be used to reach the host. IP address will not be supported. This is being done to gain better SSL support for hosted contracts. Along with this change, we will provide the ability to seamlessly configure SSL for free (using [Let's Encrypt](https://letsencrypt.org/)) during the installation. Existing installations will not be effected.
 
 ## Important tips
   - You can use a phyisical or virtual (VPS) Linux server as your Evernode host. **[WSL](https://docs.microsoft.com/en-us/windows/wsl/about) or [Containers](https://linuxcontainers.org/) are not supported**.
