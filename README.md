@@ -55,8 +55,13 @@ Once Evernode is installed, you don't need to do anything else. Evernode will au
 For monitoring and maintenance, you can use following commands:
   - `evernode status` - Display your current registration status and Ever balance in your account.
   - `evernode list` - Display a list of smart contracts running on your host.
-  - `evernode update` - Apply Evernode beta software updates.
   - `evernode log` - Generate Evernode log file.
+  - `evernode applyssl` - Apply new SSL certificates for contracts.
+  - `evernode config` - View and update host configuration.
+  - `evernode update` - Apply Evernode beta software updates.
+  - `evernode transfer` - Initiate an Evernode beta transfer for your machine.
+  - `evernode delete` - Remove an instance from the system and recreate the lease.
+  - `evernode uninstall` - Uninstall and deregister from Evernode beta.
   - `sashi` - Sashimono CLI for advanced operations and monitoring. Use `sashi -h` for help.
 
 Note: `sudo` access is required for `update`, `log` and `uninstall` commands.
