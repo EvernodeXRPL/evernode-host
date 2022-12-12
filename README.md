@@ -61,7 +61,6 @@ For monitoring and maintenance, you can use following commands:
   - `evernode update` - Apply Evernode beta software updates.
   - `evernode transfer` - Initiate an Evernode beta transfer for your machine.
   - `evernode delete` - Remove an instance from the system and recreate the lease.
-  - `evernode uninstall` - Uninstall and deregister from Evernode beta.
   - `sashi` - Sashimono CLI for advanced operations and monitoring. Use `sashi -h` for help.
 
 Note: `sudo` access is required for `update`, `log` and `uninstall` commands.
