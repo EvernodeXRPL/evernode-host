@@ -63,7 +63,7 @@ For monitoring and maintenance, you can use following commands:
   - `evernode delete` - Remove an instance from the system and recreate the lease.
   - `sashi` - Sashimono CLI for advanced operations and monitoring. Use `sashi -h` for help.
 
-Note: `sudo` access is required for `update`, `log` and `uninstall` commands.
+Note: `sudo` access is required for `log`, `applyssl`, `config`, `update`, `transfer` and `uninstall` commands.
 
 At any time, you can uninstall and deregister from Evernode with `evernode uninstall`.
 
