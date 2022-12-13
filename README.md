@@ -50,7 +50,7 @@ curl -fsSL https://stevernode.blob.core.windows.net/evernode-beta/setup.sh | cat
 ```
 
 ## Maintaining your host
-Once Evernode is installed, you don't need to do anything else. Evernode will automatically use your server to fullfil leasing reqeusts from Evernode tenants. You will earn Evers (EVR) as tenants lease hosting.
+Once Evernode is installed, you don't need to do anything else. Evernode will automatically use your server to fullfil leasing requests from Evernode tenants. You will earn Evers (EVR) as tenants lease hosting.
 
 For monitoring and maintenance, you can use following commands:
   - `evernode status` - Display your current registration status and Ever balance in your account.
@@ -81,9 +81,9 @@ For monitoring and maintenance, you can use following commands:
     - **Instance name:** Name of the instance to be deleted.
   - `sashi` - Sashimono CLI for advanced operations and monitoring. Use `sashi -h` for help.
 
-Note: `sudo` access is required for `log`, `applyssl`, `config`, `update`, `transfer` and `uninstall` commands.
-
 At any time, you can uninstall and deregister from Evernode with `evernode uninstall`.
+
+**Note:** `sudo` access is required for `update`, `log`, `transfer`, `applyssl`, `config` and `uninstall` commands.
 
 # Reporting issues
 Please report any issues and error logs [here](https://github.com/HotPocketDev/evernode-host/issues).
