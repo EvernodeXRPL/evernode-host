@@ -56,16 +56,38 @@ curl -fsSL https://stevernode.blob.core.windows.net/evernode-beta/setup.sh | cat
 ```
 
 ## Maintaining your host
-Once Evernode is installed, you don't need to do anything else. Evernode will automatically use your server to fullfil leasing reqeusts from Evernode tenants. You will earn Evers (EVR) as tenants lease hosting.
+Once Evernode is installed, you don't need to do anything else. Evernode will automatically use your server to fullfil leasing requests from Evernode tenants. You will earn Evers (EVR) as tenants lease hosting.
 
 For monitoring and maintenance, you can use following commands:
   - `evernode status` - Display your current registration status and Ever balance in your account.
   - `evernode list` - Display a list of smart contracts running on your host.
   - `evernode update` - Apply Evernode beta software updates.
   - `evernode log` - Generate Evernode log file.
+  - `evernode transfer` - Transfer the registration NFT.
+  - `evernode applyssl <Private key file> <Cert file> <CA bundle file (Optional)` - Apply new SSL certificates for contracts.
+    - **Private key file:** Path to the tls private key file.
+    - **Cert file:** Path to the tls cert file.
+    - **CA bundle file (Optional):** Path to the tls certificate authority file.
+  - `evernode config <Type> <Arguments (Optional)>` - View and update host configuration.
+    - **Type:** Configuration type `(resources|leaseamt|rippled)`
+    - **Arguments (Optional):**
+      - **resources:** `<RAM in MB> <Swap in MB> <Disk in MB> <Instance count>`
+        - _RAM in MB:_ Ram slice in Mega Bytes.
+        - _Swap in MB:_ Swap slice in Mega Bytes.
+        - _Disk in MB:_ Disk slice in Mega Bytes.
+        - _Instance count:_ Maximum instance count to be allocated.
+        - _Returns existing resource configurations if no arguments are given._
+      - **leaseamt:** `<Lease amount>`
+        - _Amount:_ New lease amount.
+        - _Returns existing lease amount if no arguments are given._
+      - **rippled:** `<Server URL>`
+        - _Server URL:_ New rippled server URL.
+        - _Returns existing rippled server URL if no arguments are given._
+  - `evernode delete <Instance name>` - Remove an Evernode instance and recreate the lease.
+    - **Instance name:** Name of the instance to be deleted.
   - `sashi` - Sashimono CLI for advanced operations and monitoring. Use `sashi -h` for help.
 
-Note: `sudo` access is required for `update`, `log` and `uninstall` commands.
+**Note:** `sudo` access is required for `update`, `log`, `transfer`, `applyssl`, `config` and `uninstall` commands.
 
 At any time, you can uninstall and deregister from Evernode with `evernode uninstall`.
 
