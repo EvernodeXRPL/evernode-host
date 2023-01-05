@@ -3,6 +3,7 @@
 Sashimono is Evernode's host management software. It enables your host to participate in the Evernode network so that Tenants can lease smart contract hosting resources from your host. It performs following jobs:
 1. Interacts with XRPL for Evernode transactional activities.
 2. Provisions Hot Pocket smart contract instances using host's hardware resources.
+3. Manages SSL certificates if you have opted-in for Let's Encrypt SSL integration.
 
 ## XRPL interaction
 Evernode uses XRPL transactions for host registration management and smart contract leasing operations. Due to this, Sashimono needs a continous websocket connection to a Rippled server of your choice. This is an outgoing connection and usually does not need any special permissions with firewalls. Sashimono uses this connection to submit and listen to Evernode operations (which are simply XRPL transactions) on behalf of your Host's XRPL account.
@@ -26,3 +27,11 @@ Sashimono only manages the resource allocation and destruction of Hot Pocket sma
    - User port is used by the contract's users to communicate with the contract.
    - Both ports must support incoming connections, hence they should be allowed through any firewalls you may have (Sashimono automatically manages the operating system default firewall for you).
 5. Upon lease expiry, Sashimono deletes all data and resources allocated to the corresponding smart contract instance.
+
+## Let's Encrypt SSL
+During the installation, if you opted in to use [Let's Encyrypt](https://letsencrypt.org/) SSL certificates, Sashimono would integrate with Let's Encrypt [cerbot](https://certbot.eff.org/pages/about) software to acquire and renew SSL certificates for your host's domain. This is fully automated and you do not have to do anything. Following explanation is for informational purposes only.
+
+1. Upon installation, new SSL certificates issued from Let's Encrypt are acquired for your domain using certbot. Certbot places them in `/etc/letsencrypt/live/<your domain>` directory.
+2. Hot Pocket smart contract instances uses these SSL ceriticates on its websocket channels so they could communicate with wide range of clients including web browsers.
+2. Let's Encrypt SSL certificates expire every 3 months. Certificate renewals are automatically handled.
+3. When SSL certificates are auto-renewed, all existing contracts will be updated with new SSL certificates. This will cause all existing contract instances to be stopped and started for a brief period (few seconds). This is performed with a script placed in `/etc/letsencrypt/renewal-hooks/deploy/` directory.
