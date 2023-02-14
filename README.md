@@ -40,13 +40,15 @@ To intsall Evernode, you server must meet following requirements:
 You can use a phyisical or virtual (VPS) Linux server as your Evernode host. **[WSL](https://docs.microsoft.com/en-us/windows/wsl/about) or [Containers](https://linuxcontainers.org/) are not supported**. It's recommended that you use a server which DOES NOT contain other workloads important to you. It's best if you can provision a fresh VPS from a cloud provider which you can dedicate for Evernode beta and dispose of easily when no longer required.
 
 #### Domain name
-You must posses a domain name (eg. `myhost.myhosting.com`) which is used to reach your host. This is required for proper SSL support for communicating with smart contracts hosted in your host. Make sure you are not hosting a website using the same subdomain you have allocated for your host. If you have, it will cause issues in SSL validation during the setup.
+You must posses a domain name (eg. `myhost.myhosting.com`) which is used to reach your host. This is required for proper SSL support for communicating with smart contracts hosted in your host. Evernode uses [Let's Encrypt](https://letsencrypt.org/) for automatic free SSL setup for your domain name.
 
 #### Network usage costs
 Based on the smart contracts that are hosted on your server, you server will accumulate network usage while its operating. During the beta, we predict that this will be well within the basic data transfer allowances of most cloud VPS providers (less than 500 GB per month). However, we recommend you to monitor the network usage or set upper limits to avoid unpredictable costs.
 
 #### Firewalls and ports
-Evernode software itself does not require any ports to be opened. However the smart contracts that are getting hosted on your host require ports to be opened and incoming traffic be allowed to those ports. Evernode automatically adds the required allow-rules to the operating system firewall. But if your host is behind an external firewall you need to allow incoming TCP traffic to the ncessary ports ranges. There are two port ranges which by default starts at 26201 and 22861. If your host supports `n` contract instances, the port ranges to allow would be `26201 to 26201+n` and `22861 to 22861+n`.
+Evernode software itself does not require any ports to be opened. However SSL setup and hosted smart contracts requires following conditions to be met. Please note that Evernode automatically adds the required allow-rules for these ports to the operating system firewall. But if your host is behind an external firewall, you need to allow incoming TCP traffic to them yourself.
+  - The smart contracts that are getting hosted on your host require certain ports to be opened and incoming traffic be allowed. There are two port ranges which by default starts at 26201 and 22861. If your host supports `n` contract instances, the port ranges to allow would be `26201 to 26201+n` and `22861 to 22861+n`.
+  - Evernode's automatic SSL setup requires port 80 to be free and incoming traffic be allowed to it. Without this, the initial SSL setup and subsequent SSL renewals will fail. (If you are running a web server like Apache or nginx on the same host, they will cause SSL setup to fail. You can stop them or either configure them to not to use port 80 to overcome this problem.)
 
 ## Installation steps
 Make sure you read the information above before installing. Run the following command to install Evernode beta on your Linux server. You need root (sudo) access for this.
