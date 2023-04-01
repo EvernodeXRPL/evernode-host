@@ -32,7 +32,7 @@ To intsall Evernode, you server must meet following requirements:
   - Swap: **2 GB** minimum
   - Disk space: **4 GB** minimum free disk space for `/home`
   - Domain name for your host
-  - Existing XRPL account with an EVR balance greater than 5120 (use [this page](https://dashboard.evernode.org/#/testnet-faucet) to generate a testnet account with EVR balance).
+  - Email address for others to contact/report issues on your host
 
 ## Important tips
 
