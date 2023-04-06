@@ -8,9 +8,9 @@
 _All of the above are automated by [Sashimono](sashimono.md), Evernode host management software which gets installed when you run the [Evernode installer](#installation)._
 
 # Evernode beta
-We are inviting interested enthusiasts to register as an Evernode host. As an Evernode beta host, your Linux server will be registered on the [XRPL Hooks v2 testnet](https://hooks-testnet-v2.xrpl-labs.com/). During the installation, you can choose how much system resources you wish to allocate for smart contract hosting. After everything is setup, your server will start leasing hosting space to Evernode tenants.
+We are inviting interested enthusiasts to register as an Evernode host. As an Evernode beta host, your Linux server will be registered on the [XRPL Hooks v3 testnet](https://hooks-testnet-v3.xrpl-labs.com/). During the installation, you can choose how much system resources you wish to allocate for smart contract hosting. After everything is setup, your server will start leasing hosting space to Evernode tenants.
 
-> **Testnet warning:** Since Evernode beta uses [XRPL Hooks v2 testnet](https://hooks-testnet-v2.xrpl-labs.com/), it is subjected to any changes/downtime imposed by the hooks testnet.
+> **Testnet warning:** Since Evernode beta uses [XRPL Hooks v3 testnet](https://hooks-testnet-v3.xrpl-labs.com/), it is subjected to any changes/downtime imposed by the hooks testnet.
 
 ## Evernode beta licence
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to use the software for, or in connection, with the Evernode network for the duration of the beta test.
@@ -33,6 +33,7 @@ To intsall Evernode, you server must meet following requirements:
   - Disk space: **4 GB** minimum free disk space for `/home`
   - Domain name for your host
   - Email address for others to contact/report issues on your host
+  - Existing XRPL account with an EVR balance greater than 5120 (use [this page](https://dashboard.evernode.org/#/testnet-faucet) to generate a testnet account with EVR balance).
 
 ## Important tips
 
