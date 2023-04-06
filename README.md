@@ -54,7 +54,7 @@ Evernode software itself does not require any ports to be opened. However SSL se
 Make sure you read the information above before installing. Run the following command to install Evernode beta on your Linux server. You need root (sudo) access for this.
 
 ```
-curl -fsSL https://stevernode.blob.core.windows.net/evernode-beta/setup.sh | sudo bash -s install
+curl -fsSL https://stevernode.blob.core.windows.net/evernode-beta-v3/setup.sh | sudo bash -s install
 ```
 
 ## Maintaining your host
