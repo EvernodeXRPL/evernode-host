@@ -30,7 +30,7 @@ You can use the Evernode CLI to manage and monitor your Evernode host.
     - `evernode governance withdraw <candidate id>` - Withdraw proposed governance candidate.
     - `evernode governance vote <candidate id>` - Vote for a governance candidate.
     - `evernode governance unvote <candidate id>` - Remove vote from voted governance candidate.
-    - `evernode governance status` - Get governance info of the host.
+    - `evernode governance status` - Get governance information of the host.
     - `evernode governance help` - Print the command information.
 
 - `evernode delete <instance name>` - Remove an existing smart contract instance and cancels the lease. Any payments made for lost lease duration are not refunded.
