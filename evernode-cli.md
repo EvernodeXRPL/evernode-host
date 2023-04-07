@@ -26,7 +26,7 @@ You can use the Evernode CLI to manage and monitor your Evernode host.
     - `<operation_type>` must be one of operation types: `propose`, `withdraw`, `vote`, `unvote`, `status` and `help`.
     - `propose`, `withdraw`, `vote` and `unvote` operations require sudo.
     - `evernode governance propose <hash file> <short name>` - Propose a new governance candidate.
-      - > `<hash file>` : Text file with the combined hashes of proposing hooks (`<governor_hook><registry_hook><heartbeat_hook>`).
+      - `<hash file>` : Text file with the combined hashes of proposing hooks (`<governor_hook><registry_hook><heartbeat_hook>`).
     - `evernode governance withdraw <candidate id>` - Withdraw proposed governance candidate.
     - `evernode governance vote <candidate id>` - Vote for a governance candidate.
     - `evernode governance unvote <candidate id>` - Remove vote from voted governance candidate.
