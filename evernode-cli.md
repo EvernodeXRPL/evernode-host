@@ -22,6 +22,17 @@ You can use the Evernode CLI to manage and monitor your Evernode host.
         - `<lease amount>`: Per Moment per contract lease amount to charge in Evers (EVR).
     - `evernode config rippled <server url>`
         - `<server url>`: Rippled server websocket url (wss://) you want to use to interact with XRPL.
+- `evernode governance <operation_type> <arguments (optional)>` - Manages the governance candidates related to the host.
+    - `<operation_type>` must be one of operation types: `propose`, `withdraw`, `vote`, `unvote`, `status` and `help`.
+    - `propose`, `withdraw`, `vote` and `unvote` operations require sudo.
+    - `evernode governance propose <hash file> <short name>` - Propose a new governance candidate.
+      - > `<hash file>` : Text file with the combined hashes of proposing hooks (`<governor_hook><registry_hook><heartbeat_hook>`).
+    - `evernode governance withdraw <candidate id>` - Withdraw proposed governance candidate.
+    - `evernode governance vote <candidate id>` - Vote for a governance candidate.
+    - `evernode governance unvote <candidate id>` - Remove vote from voted governance candidate.
+    - `evernode governance status` - Get governance info of the host.
+    - `evernode governance help` - Print the command information.
+
 - `evernode delete <instance name>` - Remove an existing smart contract instance and cancels the lease. Any payments made for lost lease duration are not refunded.
     - `<instance name>` Name of the smart contract instance to be deleted. Use `evernode list` to find out instance name.
 - `evernode update` - Apply Evernode beta software updates. You don't really need to use this as the auto-updater takes care of this. Requires sudo.
