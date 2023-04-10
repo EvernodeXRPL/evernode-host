@@ -27,11 +27,11 @@ Evernode Foundation may, in its absolute discretion, airdrop a portion of its Ev
 
 ## System requirements
 To intsall Evernode, you server must meet following requirements:
-  - Operating system: **Ubuntu 20.04** 64 bit (M1/ARM CPUs not supported)
+  - Operating system: **Ubuntu 20.04** 64 bit (M1/ARM CPUs not supported. Any other Ubuntu versions are not supported.)
   - RAM: **2 GB** minimum
   - Swap: **2 GB** minimum
   - Disk space: **4 GB** minimum free disk space for `/home`
-  - Domain name for your host
+  - Domain name for your host ([read more](#domain-name))
   - Email address for others to contact/report issues on your host
   - Existing XRPL account with an EVR balance greater than 5120 (use [this page](https://dashboard.evernode.org/#/testnet-faucet) to generate a testnet account with EVR balance).
 
@@ -41,7 +41,7 @@ To intsall Evernode, you server must meet following requirements:
 You can use a phyisical or virtual (VPS) Linux server as your Evernode host. **[WSL](https://docs.microsoft.com/en-us/windows/wsl/about) or [Containers](https://linuxcontainers.org/) are not supported**. It's recommended that you use a server which DOES NOT contain other workloads important to you. It's best if you can provision a fresh VPS from a cloud provider which you can dedicate for Evernode beta and dispose of easily when no longer required.
 
 #### Domain name
-You must posses a domain name (eg. `myhost.myhosting.com`) which is used to reach your host. This is required for proper SSL support for communicating with smart contracts hosted in your host. Evernode uses [Let's Encrypt](https://letsencrypt.org/) for automatic free SSL setup for your domain name.
+You must posses a domain name (eg. `myhost.myhosting.com`) which is used to reach your host. This is required for proper SSL support for communicating with smart contracts hosted in your host. Evernode uses [Let's Encrypt](https://letsencrypt.org/) for automatic free SSL setup for your domain name. Domain names which map to multiple IP addresses (round-robin DNS) should not be used.
 
 #### Network usage costs
 Based on the smart contracts that are hosted on your server, you server will accumulate network usage while its operating. During the beta, we predict that this will be well within the basic data transfer allowances of most cloud VPS providers (less than 500 GB per month). However, we recommend you to monitor the network usage or set upper limits to avoid unpredictable costs.
