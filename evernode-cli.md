@@ -30,7 +30,7 @@ You can use the Evernode CLI to manage and monitor your Evernode host.
     - `evernode governance withdraw <candidate id>` - Withdraw proposed governance candidate.
     - `evernode governance vote <candidate id>` - Vote for a governance candidate.
     - `evernode governance unvote <candidate id>` - Remove vote from voted governance candidate.
-      - `<candidate_id>` : This will be accessible through the candidate view on the Evernode Dashboard.
+      - `<candidate_id>` : This will be accessible through the candidate view on the Evernode Dashboard *(Upcoming feature)*.
     - `evernode governance status` - Get governance information of the host.
       - This also helps to find proposed and voted `candidate_id`s by the host.
     - `evernode governance help` - Print the command information.
