@@ -87,7 +87,7 @@ Read about [Sashimono](sashimono.md) to get a better understanding on what's goi
 
 ## Easy Evernode transfers
 
-You can now perform Evernode transfers **without** installing Evernode host software.
+You can now perform Evernode transfers **without** installing `Evernode`.
 You can use the following command in your terminal to execute an Evernode transfer for your host account.
 
 ```
