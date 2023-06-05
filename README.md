@@ -27,11 +27,12 @@ SOFTWARE.
 
 Evernode Foundation may, in its absolute discretion, airdrop a portion of its Evers to people who participate in the beta. But the details of any such airdrop are not confirmed. The Foundation reserve the right to, at anytime and without notice, amend the details of any airdrop, include or exclude people or classes of people, or abandon the airdrop entirely. You should participate in the beta because you want to help the Evernode Network succeed, not because you want an airdrop of Evers.
 
-# Installation
+# Installation 
+
 
 ## System requirements
 
-To intsall Evernode, you server must meet following requirements:
+To install Evernode, you server must meet following requirements:
 
 - Operating system: **Ubuntu 20.04** 64 bit (M1/ARM CPUs not supported. Any other Ubuntu versions are not supported.)
 - RAM: **2 GB** minimum
@@ -40,6 +41,8 @@ To intsall Evernode, you server must meet following requirements:
 - Domain name for your host ([read more](#domain-name))
 - Email address for others to contact/report issues on your host
 - Existing XRPL account with an EVR balance greater than 5120 (use [this page](https://dashboard.evernode.org/#/testnet-faucet) to generate a testnet account with EVR balance).
+
+(Optional) Step-by-step Instructions [Get Setup on AWS](https://tinyurl.com/aws-instance)
 
 ## Important tips
 
@@ -66,6 +69,27 @@ Evernode software itself does not require any ports to be opened. However SSL se
 
 - The smart contracts that are getting hosted on your host require certain ports to be opened and incoming traffic be allowed. There are two port ranges which by default starts at 26201 and 22861. If your host supports `n` contract instances, the port ranges to allow would be `26201 to 26201+n` and `22861 to 22861+n`.
 - Evernode's automatic SSL setup requires port 80 to be free and incoming traffic be allowed to it. Without this, the initial SSL setup and subsequent SSL renewals will fail. (If you are running a web server like Apache or nginx on the same host, they will cause SSL setup to fail. You can stop them or either configure them to not to use port 80 to overcome this problem.)
+
+#### Guide to Setting Up Swapfile:
+
+1. Log in to the instance/ server using SSH.
+
+2. Once logged in, run the command `sudo su -` to gain root access.
+
+3. Create the Swap file by executing the following command: `dd if=/dev/zero of=/swap1.swp bs=1M count=2000`
+
+4. Set permissions on the Swap file to 600 by executing the command: `chmod 600 /swap1.swp` 
+
+5. Initialize the Swap file by running the command: `mkswap /swap1.swp`
+
+6. Activate the Swap file by running the command: `swapon /swap1.swp`
+
+7. Enable it on boot by running the command: `echo '/swap1.swp swap swap defaults 0 0' >> /etc/fstab`
+
+8. Check if the Swap file was created correctly by running the command: `swapon --show`
+
+9. Finally, run the command: `free -m` to check the amount of available memory. 
+
 
 ## Installation steps
 
