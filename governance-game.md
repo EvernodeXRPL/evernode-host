@@ -41,7 +41,8 @@ Participant can submit a Proposal with new Hook hashes of above mentioned 3 Hook
 
 ### Voting
 
-- Participants vote is captured via their heartbeat.
+- Hosts can make their choice of voting via Evernode-Cli.
+- Participants vote is captured via their heartbeat, which is managed by Evernode software installed on the host.
 - They either Support or Reject a Proposal.
   - Reject is the default.
   - Support is positive vote for the Proposal.
