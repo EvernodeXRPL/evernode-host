@@ -19,13 +19,14 @@ There are two classes of Participant in the Governance Game.
 
 ## Governance
 
-Participant can submit a Proposal with new Hook hashes of above mentioned 3 Hooks. Once that Proposal is continuously supported by 80% of eligible Participants for 2 weeks, the Hook will be changed accordingly.
+Participant can submit a Proposal with new Hook hashes of above mentioned 3 Hooks. Once that Proposal is continuously supported by 80% of eligible Participants for 2 weeks, the existing hooks will be replaced by the proposed hooks.
 
 ### Submitting a proposal
 
 - A Proposal represents the hashes <governance_hooks_hash><registry_hook_hash><heartbeat_hook_hash> of the new Hook to replace an existing Hook.
 - Any Participant can submit a Proposal for a new Hook.
 - Proposer must collateralize their Proposal with 1 Moment’s worth of EVR rewards.
+- The hooks which bears the proposed hashes must be deployed to some existing XRPL account.
 
 ### Withdrawing a Proposal
 
