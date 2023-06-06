@@ -55,8 +55,7 @@ Participant can submit a Proposal with new Hook hashes of above mentioned 3 Hook
 
 ### The Foundation Special Rights
 
-- These rules for determining whether a Proposal gets up apply subject to the special rights of the Foundation.
-- These rules for determining whether a Proposal gets up apply subject to the special rights of the Foundation.
+- These rules apply when determining the Foundation vote.
 
   - Always Eligible: Foundation is always eligible to vote.
   - Fall-Back Option: If there are no other eligible Participants, the Foundation vote is determinative.
