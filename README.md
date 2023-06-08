@@ -67,6 +67,9 @@ At any time, you can uninstall and deregister from Evernode with `sudo evernode 
 
 Read about [Sashimono](sashimono.md) to get a better understanding on what's going on inside the software.
 
+## Governance Game
+You can refer the detailed documentation in [here](governance-game.md).
+
 # Reporting issues
 Please report any issues and error logs [here](https://github.com/HotPocketDev/evernode-host/issues).
 
