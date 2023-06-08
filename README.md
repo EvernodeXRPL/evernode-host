@@ -87,6 +87,8 @@ Read about [Sashimono](sashimono.md) to get a better understanding on what's goi
 
 ## Governance Game
 
+Governance Game allows eligible participants in the Evernode network to propose and vote on the Evernode Hook changes. These proposals will get accepted or purged according to a predetermined rule-set on received votes. 
+
 You can refer the detailed documentation in [here](governance-game.md).
 
 ## Easy Evernode transfers
