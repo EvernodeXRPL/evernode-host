@@ -85,11 +85,6 @@ At any time, you can uninstall and deregister from Evernode with `sudo evernode 
 
 Read about [Sashimono](sashimono.md) to get a better understanding on what's going on inside the software.
 
-## Governance Game
-
-Governance Game allows eligible participants in the Evernode network to propose and vote on the Evernode Hook changes. These proposals will get accepted or purged according to a predetermined rule-set on received votes. 
-
-You can refer the detailed documentation in [here](governance-game.md).
 
 ## Easy Evernode transfers
 
@@ -99,6 +94,12 @@ You can use the following command in your terminal to execute an Evernode transf
 ```
 curl -fsSL https://stevernode.blob.core.windows.net/evernode-beta-v3/setup.sh | sudo bash -s transfer -i
 ```
+
+# Governance Game
+
+Governance Game allows eligible participants in the Evernode network to propose and vote on the Evernode Hook changes. These proposals will get accepted or purged according to a predetermined rule-set on received votes.
+
+You can refer the detailed documentation in [here](governance-game.md).
 
 # Reporting issues
 
