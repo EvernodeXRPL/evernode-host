@@ -22,6 +22,8 @@ You can use the Evernode CLI to manage and monitor your Evernode host.
         - `<lease amount>`: Per Moment per contract lease amount to charge in Evers (EVR).
     - `evernode config rippled <server url>`
         - `<server url>`: Rippled server websocket url (wss://) you want to use to interact with XRPL.
+    - `evernode config email <email address>`
+        - `<email address>`: Contact email address for the host (this will be published on the host registry and is publicly visible to anyone).
 - `evernode governance <operation_type> <arguments (optional)>` - Manages the governance candidates related to the host.
     - `<operation_type>` must be one of operation types: `propose`, `withdraw`, `vote`, `unvote`, `status` and `help`.
     - `propose`, `withdraw`, `vote` and `unvote` operations require sudo.
