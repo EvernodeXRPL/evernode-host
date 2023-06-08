@@ -12,14 +12,14 @@ The account associated with each hook remains constant, while the hooks themselv
 
 ## Participants
 
-There are two classes of Participant in the Governance Game.
+There are two classes of participants in the Governance Game.
 
-- The Foundation: The Foundation always has 1 vote and has special rights in Piloted and Co-Piloted modes and has no special rights on Auto-Piloted mode.
+- The Foundation: The Foundation always has 1 vote and has special rights in Piloted and Co-Piloted modes and has no special rights over Auto-Piloted mode.
 - Valid Hosts: Accounts that hold a registration token for the previous 3 continuous months and are not eligible to be pruned due to unreliability.
 
 ## Governance
 
-Participant can submit a Proposal with new Hook hashes of above mentioned 3 Hooks. Once that Proposal is continuously supported by 80% of eligible Participants for 2 weeks, the existing hooks will be replaced by the proposed hooks.
+The Participant can submit a Proposal with new Hook hashes of above mentioned 3 Hooks. Once that Proposal is continuously supported by 80% of eligible Participants for 2 weeks, the existing hooks will be replaced by the proposed hooks.
 
 ### Submitting a proposal
 
@@ -42,15 +42,15 @@ Participant can submit a Proposal with new Hook hashes of above mentioned 3 Hook
 ### Voting
 
 - Hosts can make their choice of voting via Evernode-Cli.
-- Participants vote is captured via their heartbeat, which is managed by Evernode software installed on the host.
+- Participant's vote is captured via their heartbeat, which is managed by Evernode software installed on the host.
 - They either Support or Reject a Proposal.
   - Reject is the default.
-  - Support is positive vote for the Proposal.
+  - Support is a positive vote for the Proposal.
 
 ### Electing a Proposal
 
 - A Proposal succeeds if it is continuously Supported by at least 80% of possible Participants for 2 weeks.
-- If a Proposal succeeds all other existing Proposals for that Hook are Purged and their staked EVRs added to the Epoch’s reward pool.
+- If a Proposal succeeds all other existing Proposals for that Hook are Purged and their staked EVRs are added to the Epoch’s reward pool.
 - The Proposer of the successful proposal gets all their staked EVRs back.
 
 ### The Foundation Special Rights
@@ -60,13 +60,13 @@ Participant can submit a Proposal with new Hook hashes of above mentioned 3 Hook
   - Always Eligible: Foundation is always eligible to vote.
   - Fall-Back Option: If there are no other eligible Participants, the Foundation vote is determinative.
 
-- In addition, the Foundation vote carries special weight depending upon the status of the Game.
+- In addition, the Foundation vote carries special weight depending upon the status of the game.
 - The Governance Game has three statuses.
 
   - Piloted: The Foundation vote determines the outcome of all Proposals.
   - Co-Piloted: No Proposal can succeed unless the Foundation Supports it and it fails if the Foundation opposes it.
   - Auto-Piloted: The standard voting rules apply with the Foundation being treated equally with any other Participant.
 
-- The Game begins Piloted and becomes Co-Piloted at the election of the Foundation.
+- The game begins Piloted and becomes Co-Piloted at the election of the Foundation.
 - If it is Co-Piloted, it becomes Auto-Piloted at the election of the Foundation.
 - If the game is Auto-Piloted, Participants can vote under standard rules to return the game to Piloted or Co-Piloted Status.
