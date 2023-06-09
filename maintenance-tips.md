@@ -6,7 +6,7 @@ If a host needs to transfer existing registration to another XRPL account or to 
 
 ex:- Due to host machine upgrade.
 
-After the transfer is completed, it needs to do a evernode re-install.(This re-installation won't cost a regular host registration fee. It will be a 1Now(EVRs * 10<sup>-8</sup>).
+After the transfer is completed, it needs to do a evernode re-install.(This re-installation won't cost a regular host registration fee. It will be a 1Now(10<sup>-8</sup> EVRs)).
 
 - If `Evernode` is already **installed**, you can use below to transfer the registration NFT.
 
