@@ -14,7 +14,7 @@ After the transfer is completed, it needs to do a evernode re-install.(This re-i
 evernode transfer
 ```
 
-- Easy Evernode transfer - If `Evernode` is not **installed**, you can now perform Evernode transfers too. you can use the following command in your terminal to execute an Evernode transfer for your host account.
+- Easy Evernode transfer - If `Evernode` is **not installed**, you can now perform Evernode transfers too. you can use the following command in your terminal to execute an Evernode transfer for your host account.
 
 ```
 curl -fsSL https://stevernode.blob.core.windows.net/evernode-beta-v3/setup.sh | sudo bash -s transfer -i
