@@ -85,15 +85,7 @@ At any time, you can uninstall and deregister from Evernode with `sudo evernode 
 
 Read about [Sashimono](sashimono.md) to get a better understanding on what's going on inside the software.
 
-
-## Easy Evernode transfers
-
-You can now perform Evernode transfers **without** installing `Evernode`.
-You can use the following command in your terminal to execute an Evernode transfer for your host account.
-
-```
-curl -fsSL https://stevernode.blob.core.windows.net/evernode-beta-v3/setup.sh | sudo bash -s transfer -i
-```
+You can find useful host maintenance tips from [here](maintenance-tips.md).
 
 # Governance Game
 
