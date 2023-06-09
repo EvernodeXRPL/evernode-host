@@ -6,8 +6,6 @@ If a host needs to transfer existing registration to another XRPL account or to 
 
 ex:- Due to host machine upgrade.
 
-Transfer can be done to the same host account or to a completely different host account.
-
 After the transfer is completed, it needs to do a evernode re-install.(This re-installation won't cost a regular host registration fee. It will be a 1Now(EVRs * 10<sup>-8</sup>))
 
 ## Evernode transfer
