@@ -22,7 +22,11 @@ new EvernodeHostStack(app, 'EvernodeHostStack', {
   }, 
   variables: { 
     ZONE_NAME: "ROUTE 53 ID", 
-    ZONE_ID: "ZONE_ID"
+    ZONE_ID: "ZONE_ID", 
+    OS_SPECIFICATION: {
+      region: 'us-east-1', 
+      image_id: "ami-053b0d53c279acc90" // This IMAGE ID will change on the AWS region that you're deploying from
+    }, 
   }
   /* Uncomment the next line if you know exactly what Account and Region you
    * want to deploy the stack to. */

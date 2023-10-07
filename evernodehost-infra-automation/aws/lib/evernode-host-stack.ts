@@ -97,10 +97,21 @@ export class EvernodeHostStack extends cdk.Stack {
     });
   
     // Set up Ubunutu Image
-    const machineImage = new GenericLinuxImage({
-      'us-east-1': 'ami-053b0d53c279acc90',
-    });
-    
+    let region = props.env.region;
+    let machineImage: any = undefined;
+    if (region == 'us-east-1') {
+      machineImage = new GenericLinuxImage({
+        'us-east-1': props.variables.OS_SPECIFICATION.image_id
+      });
+    } 
+    else if (region == 'us-west-1') { 
+      machineImage = new GenericLinuxImage({
+        'us-west-1': props.variables.OS_SPECIFICATION.image_id
+      });
+    }
+    else { 
+      throw new Error("Currently only supported for US east and west aws regions");
+    }
    // Set up Evernode host instance autoscaling 
     const applicationAutoScalingGroup = new AutoScalingGroup(this, "AutoScalingGroup", {
       vpc: vpc,
