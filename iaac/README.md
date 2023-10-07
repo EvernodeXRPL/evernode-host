@@ -19,4 +19,4 @@ The `cdk.json` file tells the CDK Toolkit how to execute your app.
 # Evernode Host Architecture Diagram in AWS
 The following diagram illustrates how to host an Evernode host node on Amazon Web Services (AWS).
 
-![Alt Text](./aws-host.png)
+![Alt Text](./architecture/aws-host.png)
