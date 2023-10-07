@@ -21,8 +21,16 @@ import {
   SubnetSelection,
 } from "aws-cdk-lib/aws-ec2";
 
+
+export interface IStackProps extends cdk.StackProps {
+  variables: any,
+  env: cdk.Environment
+
+}
+
+
 export class EvernodeHostStack extends cdk.Stack {
-  constructor(scope: Construct, id: string, props?: cdk.StackProps) {
+  constructor(scope: Construct, id: string, props: IStackProps) {
     super(scope, id, props);
 
     // Set up vpc 
@@ -48,12 +56,12 @@ export class EvernodeHostStack extends cdk.Stack {
     // Now let's set up dns record with existing domain name and integrate with load balancer 
     // Get the existing hosted zone
     const hostedZone = HostedZone.fromHostedZoneAttributes(this, 'EvernodeHostHostedZone', {
-      hostedZoneId: 'YOUR_HOSTED_ZONE_ID',
-      zoneName: 'example.com',
+      hostedZoneId: props.variables.ZONE_ID,
+      zoneName: props.variables.ZONE_NAME,
     });
     // Request an ACM certificate
     const certValidation = new certificatemanager.Certificate(this, 'EvernodeHostCertificate', {
-      domainName: 'hello.example.com',
+      domainName: `*.${props.variables.ZONE_NAME}`,
       certificateName: 'EvernodeHostCert', // Optionally provide an certificate name
       validation: certificatemanager.CertificateValidation.fromDns(hostedZone),
     });
@@ -112,19 +120,6 @@ export class EvernodeHostStack extends cdk.Stack {
         estimatedInstanceWarmup: cdk.Duration.minutes(1),
     });
     // Adding Target to backend Evernode Instnace
-    // const targetGroup = new elbv2.ApplicationTargetGroup(this, 'EvernodeHostTargetGroup', {
-    //   vpc: vpc,
-    //   port: 80,
-    //   targetType: elbv2.TargetType.INSTANCE, 
-    //   healthCheck: {
-    //     enabled: true,
-    //   },
-    // });
-    
-    // listener.addTargetGroups('EvernodeHostTargetGroup', {
-    //   targetGroups: [targetGroup],
-      
-    // });
     listener.addTargets('EvernodeHostASGTargets', {
         port: 80,
         targetGroupName: "EvernodeHostASGTargets", 
@@ -135,7 +130,7 @@ export class EvernodeHostStack extends cdk.Stack {
     // Set up DNS record that puts the ELB created above 
     new ARecord(this, 'ARecord', {
       zone: hostedZone,
-      recordName: 'www.example.com',
+      recordName: `www.kingevernode.${props.variables.ZONE_NAME}`,
       target: RecordTarget.fromAlias(new LoadBalancerTarget(lb)),
     });  
   }
