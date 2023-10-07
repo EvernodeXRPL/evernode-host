@@ -21,8 +21,8 @@ new EvernodeHostStack(app, 'EvernodeHostStack', {
     region: process.env.CDK_DEFAULT_REGION 
   }, 
   variables: { 
-    ZONE_NAME: "ROUTE 53 ID", 
-    ZONE_ID: "ZONE_ID", 
+    ZONE_NAME: "kiraticommunityva.org", 
+    ZONE_ID: "Z093240929EXI3JHI7GKP", 
     OS_SPECIFICATION: {
       region: 'us-east-1', 
       image_id: "ami-053b0d53c279acc90" // This IMAGE ID will change on the AWS region that you're deploying from
