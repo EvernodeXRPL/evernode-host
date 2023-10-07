@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 import 'source-map-support/register';
 import * as cdk from 'aws-cdk-lib';
-import { IaacStack } from '../lib/iaac-stack';
+import { EvernodeHostStack } from '../lib/evernode-host-stack';
 // import * as dotenv from 'dotenv';
 // dotenv.config();
 
@@ -13,7 +13,7 @@ const AWS_REGION = process.env.AWS_REGION;
 const AWS_ACCOUNT = process.env.AWS_ACCOUNT
 */
 
-new IaacStack(app, 'IaacStack', {
+new EvernodeHostStack(app, 'EvernodeHostStack', {
   /* Uncomment the next line to specialize this stack for the AWS Account
    * and Region that are implied by the current CLI configuration. */
   // env: { account: process.env.CDK_DEFAULT_ACCOUNT, region: process.env.CDK_DEFAULT_REGION },

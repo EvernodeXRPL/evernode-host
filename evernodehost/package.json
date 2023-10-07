@@ -2,7 +2,7 @@
   "name": "iaac",
   "version": "0.1.0",
   "bin": {
-    "iaac": "bin/iaac.js"
+    "iaac": "bin/evernodehost.js"
   },
   "scripts": {
     "build": "tsc",

@@ -1,13 +1,13 @@
 // import * as cdk from 'aws-cdk-lib';
 // import { Template } from 'aws-cdk-lib/assertions';
-// import * as Iaac from '../lib/iaac-stack';
+// import * as evernode-host-stack from '../lib/evernode-host-stack-stack';
 
 // example test. To run these tests, uncomment this file along with the
-// example resource in lib/iaac-stack.ts
+// example resource in lib/evernode-host-stack-stack.ts
 test('SQS Queue Created', () => {
 //   const app = new cdk.App();
 //     // WHEN
-//   const stack = new Iaac.IaacStack(app, 'MyTestStack');
+//   const stack = new evernode-host-stack.evernode-host-stackStack(app, 'MyTestStack');
 //     // THEN
 //   const template = Template.fromStack(stack);
 

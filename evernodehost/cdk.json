@@ -1,5 +1,5 @@
 {
-  "app": "npx ts-node --prefer-ts-exts bin/iaac.ts",
+  "app": "npx ts-node --prefer-ts-exts bin/evernodehost.ts",
   "watch": {
     "include": [
       "**"
