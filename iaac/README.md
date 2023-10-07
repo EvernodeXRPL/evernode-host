@@ -1,6 +1,5 @@
-# Welcome to your CDK TypeScript project
-
-This is a blank project for CDK development with TypeScript.
+# Automating Evernode Host Provisioning in AWS
+This repository contains the automation scripts for deploying the Evernode Host operator on AWS using the Infrastructure as Code (IaC) approach with AWS CDK.
 
 The `cdk.json` file tells the CDK Toolkit how to execute your app.
 
