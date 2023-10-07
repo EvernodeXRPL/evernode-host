@@ -107,7 +107,7 @@ export class EvernodeHostStack extends cdk.Stack {
     });
 
     applicationAutoScalingGroup.scaleOnCpuUtilization("CpuScaling", {
-        targetUtilizationPercent: 50,
+        targetUtilizationPercent: 90,
         cooldown: cdk.Duration.minutes(1),
         estimatedInstanceWarmup: cdk.Duration.minutes(1),
     });
