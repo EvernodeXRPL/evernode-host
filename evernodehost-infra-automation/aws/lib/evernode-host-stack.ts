@@ -19,6 +19,9 @@ import {
   Port, 
   SecurityGroup, 
   SubnetSelection,
+  Instance, 
+  MachineImage,
+  GenericLinuxImage
 } from "aws-cdk-lib/aws-ec2";
 
 
@@ -93,6 +96,11 @@ export class EvernodeHostStack extends cdk.Stack {
       ],
     });
   
+    // Set up Ubunutu Image
+    const machineImage = new GenericLinuxImage({
+      'us-east-1': 'ami-053b0d53c279acc90',
+    });
+    
    // Set up Evernode host instance autoscaling 
     const applicationAutoScalingGroup = new AutoScalingGroup(this, "AutoScalingGroup", {
       vpc: vpc,
@@ -100,9 +108,10 @@ export class EvernodeHostStack extends cdk.Stack {
         InstanceClass.BURSTABLE4_GRAVITON,
         InstanceSize.MICRO
       ),
-      machineImage: new AmazonLinuxImage({
-        generation: AmazonLinuxGeneration.AMAZON_LINUX_2023,
-      }),
+      // machineImage: new AmazonLinuxImage({
+      //   generation: AmazonLinuxGeneration.AMAZON_LINUX_2023,
+      // }),
+      machineImage: machineImage,
       allowAllOutbound: true,
       maxCapacity: 2,
       minCapacity: 1,
