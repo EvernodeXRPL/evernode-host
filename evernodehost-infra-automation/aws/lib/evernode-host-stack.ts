@@ -8,8 +8,8 @@ import { LoadBalancerTarget} from 'aws-cdk-lib/aws-route53-targets';
 import * as certificatemanager from 'aws-cdk-lib/aws-certificatemanager';
 import { AutoScalingGroup, HealthCheck } from "aws-cdk-lib/aws-autoscaling";
 import {
-  AmazonLinuxGeneration,
-  AmazonLinuxImage,
+  // AmazonLinuxGeneration,
+  // AmazonLinuxImage,
   InstanceClass,
   InstanceSize,
   InstanceType,
@@ -18,10 +18,10 @@ import {
   Peer, 
   Port, 
   SecurityGroup, 
-  SubnetSelection,
-  Instance, 
-  MachineImage,
-  GenericLinuxImage
+  // SubnetSelection,
+  // Instance, 
+  // MachineImage,
+  GenericLinuxImage,
 } from "aws-cdk-lib/aws-ec2";
 
 
@@ -131,7 +131,8 @@ export class EvernodeHostStack extends cdk.Stack {
       healthCheck: HealthCheck.ec2(),
       vpcSubnets: {
         subnetType: SubnetType.PRIVATE_ISOLATED
-      }
+      }, 
+      
     });
 
     applicationAutoScalingGroup.scaleOnCpuUtilization("CpuScaling", {
