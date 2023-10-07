@@ -12,3 +12,11 @@ The `cdk.json` file tells the CDK Toolkit how to execute your app.
 * `cdk deploy`      deploy this stack to your default AWS account/region
 * `cdk diff`        compare deployed stack with current state
 * `cdk synth`       emits the synthesized CloudFormation template
+
+
+
+
+# Evernode Host Architecture Diagram in AWS
+The following diagram illustrates how to host an Evernode host node on Amazon Web Services (AWS).
+
+![Alt Text](./aws-host.png)
