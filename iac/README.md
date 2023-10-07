@@ -3,6 +3,9 @@ This repository contains the automation scripts for deploying the Evernode Host 
 
 The `cdk.json` file tells the CDK Toolkit how to execute your app.
 
+## Steps to Deploy Evernode Host Instance on AWS with AWS CDK
+TO-DO
+
 ## Useful commands
 
 * `npm run build`   compile typescript to js
