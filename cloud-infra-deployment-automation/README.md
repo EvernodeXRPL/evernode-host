@@ -14,6 +14,36 @@ Before deploying to AWS, make sure you have completed the following steps:
 4. Create a SSH Key pair from the AWS console for host access over SSH from your computer
 4. NodeJS and AWS CDK tool is installed on your computer.
 
+## Deployment 
+
+1. Clone the repository 
+2. Go to this path: cloud-infra-deployment-automation/aws/bin
+3. Open evernodehost.ts file and modify the value according to your AWS environment: 
+```typescript 
+let variables = {
+    ZONE_NAME: "HOSTED ZONE NAME", 
+    ZONE_ID: "HOSTED ZONE ID", 
+    OS_SPECIFICATION: {
+      region: 'us-east-1', 
+      image_id: "ami-053b0d53c279acc90" // This IMAGE ID will change on the AWS region that you're deploying from
+    }, 
+    ssh_key_name: "the ssh key name that you created as part of the pre-requisite steps"
+}
+```
+
+4. Once you finished adjusting, change the directory back to cloud-infra-deployment-automation/aws and run the follwoing command
+```bash 
+    cdk synth
+    cdk deploy 
+
+```
+5. You should now have Evernode host resources deployed 
+
+6. If you want to destroy the resources that you created above, you can do the following: 
+```bash 
+    cdk destroy
+```
+
 ## Useful commands
 The `cdk.json` file tells the CDK Toolkit how to execute your app.
 * `npm run build`   compile typescript to js
@@ -45,3 +75,7 @@ AWS CDK Tool: AWS CDK (Cloud Development Kit) is an open-source software develop
 By deploying the infrastructure stacks for Evernode, you will incur AWS infrastructure usage costs. These costs will depend on the resources you deploy and their usage. It's important to monitor your AWS usage and costs to avoid unexpected charges. AWS provides tools and features to help you manage and monitor your AWS costs, including AWS Cost Explorer and AWS Budgets aws.amazon.com.
 
 Please note that this is a high-level overview. Depending on your specific needs and the complexity of your deployment, you might need additional knowledge and skills.
+
+
+
+This commit introduces a feature that enables automated deployment of Evernode host infrastructures in AWS platform using AWS CDK, a DevOps tool written in TypeScript. Please reach out to me at ishwolab@gmail.com if you have any questions regarding this feature.
