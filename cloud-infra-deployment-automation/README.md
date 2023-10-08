@@ -3,7 +3,7 @@ This repository contains the automation scripts for deploying the Evernode Host 
 
 [NOTE]: This module only handles provisioning of the required infrastrcutre resources and it doesn't automate the Evernode host setup.
 
-The `cdk.json` file tells the CDK Toolkit how to execute your app.
+
 
 ## Prerequisites
 Before deploying to AWS, make sure you have completed the following steps:
@@ -12,10 +12,10 @@ Before deploying to AWS, make sure you have completed the following steps:
 2. You have a public domain name created using AWS Route 53. docs.aws.amazon.com
 3. AWS CLI is installed and configured with the Programmatic Access key created above. docs.aws.amazon.com  
 4. Create a SSH Key pair from the AWS console for host access over SSH from your computer
-4. NodeJS and AWS CDK tool is installed on your computer. github.com
+4. NodeJS and AWS CDK tool is installed on your computer.
 
 ## Useful commands
-
+The `cdk.json` file tells the CDK Toolkit how to execute your app.
 * `npm run build`   compile typescript to js
 * `npm run watch`   watch for changes and compile
 * `npm run test`    perform the jest unit tests
