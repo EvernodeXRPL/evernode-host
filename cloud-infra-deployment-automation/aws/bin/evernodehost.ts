@@ -27,6 +27,7 @@ new EvernodeHostStack(app, 'EvernodeHostStack', {
       region: 'us-east-1', 
       image_id: "ami-053b0d53c279acc90" // This IMAGE ID will change on the AWS region that you're deploying from
     }, 
+    ssh_key_name: "the ssh key name that you created as part of the pre-requisite steps"
   }
   /* Uncomment the next line if you know exactly what Account and Region you
    * want to deploy the stack to. */

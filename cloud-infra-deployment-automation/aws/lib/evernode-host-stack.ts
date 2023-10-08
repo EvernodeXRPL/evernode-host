@@ -6,9 +6,9 @@ import * as iam from 'aws-cdk-lib/aws-iam';
 import { PublicHostedZone, HostedZone, ARecord, RecordTarget } from 'aws-cdk-lib/aws-route53';
 import { LoadBalancerTarget} from 'aws-cdk-lib/aws-route53-targets';
 import * as certificatemanager from 'aws-cdk-lib/aws-certificatemanager';
-import { AutoScalingGroup, HealthCheck } from "aws-cdk-lib/aws-autoscaling";
+import { AutoScalingGroup, HealthCheck, BlockDeviceVolume} from "aws-cdk-lib/aws-autoscaling";
 import {
-  // AmazonLinuxGeneration,
+  AmazonLinuxGeneration,
   // AmazonLinuxImage,
   InstanceClass,
   InstanceSize,
@@ -18,9 +18,7 @@ import {
   Peer, 
   Port, 
   SecurityGroup, 
-  // SubnetSelection,
-  // Instance, 
-  // MachineImage,
+  Instance, 
   GenericLinuxImage,
 } from "aws-cdk-lib/aws-ec2";
 
@@ -71,20 +69,20 @@ export class EvernodeHostStack extends cdk.Stack {
 
 
     // Set up the firewall rules for Load Balancer 
-    // Create a security group
-    const securityGroup = new SecurityGroup(this, 'EvernodeHostSecurityGroup', {
+    // Create a security group for ELB 
+    const securityGroupELB = new SecurityGroup(this, 'EvernodeHostELBSecurityGroup', {
       vpc: vpc,
+      allowAllOutbound: true
     });
 
     // Add an ingress rule to allow port 443 from everywhere
-    securityGroup.addIngressRule(Peer.anyIpv4(), Port.tcp(443), 'Allow port 443 from everywhere');
-
+    securityGroupELB.addIngressRule(Peer.anyIpv4(), Port.tcp(443), 'Allow port 443 from everywhere');
     // Set up the AWS Application LoadBalancer to loadblance and handle incoming traffics to backend Evernode Host Service
     const lb = new elbv2.ApplicationLoadBalancer(this, 'EvernodeHostLB', {
       vpc,
       internetFacing: true,
       loadBalancerName: "EvernodeHostLB", 
-      securityGroup: securityGroup,
+      securityGroup: securityGroupELB,
     });
 
     // Create a LB listener with port 443 to handle inbound connection
@@ -112,16 +110,23 @@ export class EvernodeHostStack extends cdk.Stack {
     else { 
       throw new Error("Currently only supported for US east and west aws regions");
     }
-   // Set up Evernode host instance autoscaling 
+
+
+    // Set up Securit group at the instance level: 
+    const evernodeHostNodeSecurityGroup = new SecurityGroup(this, 'EvernodeHostNodeSecurityGroup', {
+      vpc: vpc,
+    });
+    evernodeHostNodeSecurityGroup.addIngressRule(
+      Peer.securityGroupId(securityGroupELB.securityGroupId), Port.allIcmp(), "Allow all tcp ports from the ELB Security group"
+    )
+
+    // Set up autoscaling to allow auto deployment of instances when load increase based on cpu load 
     const applicationAutoScalingGroup = new AutoScalingGroup(this, "AutoScalingGroup", {
       vpc: vpc,
       instanceType: InstanceType.of(
-        InstanceClass.BURSTABLE4_GRAVITON,
-        InstanceSize.MICRO
+        InstanceClass.T3,
+        InstanceSize.MEDIUM
       ),
-      // machineImage: new AmazonLinuxImage({
-      //   generation: AmazonLinuxGeneration.AMAZON_LINUX_2023,
-      // }),
       machineImage: machineImage,
       allowAllOutbound: true,
       maxCapacity: 2,
@@ -132,9 +137,18 @@ export class EvernodeHostStack extends cdk.Stack {
       vpcSubnets: {
         subnetType: SubnetType.PRIVATE_ISOLATED
       }, 
-      
+      blockDevices: [
+        {
+            deviceName: 'EvernodeRootVolume',
+            volume: BlockDeviceVolume.ebs(20, {
+              volumeType: autoscaling.EbsDeviceVolumeType.GP3,
+            }),
+          },
+      ],
+      securityGroup: evernodeHostNodeSecurityGroup, 
+      keyName: props.variables.ssh_key_name
     });
-
+  
     applicationAutoScalingGroup.scaleOnCpuUtilization("CpuScaling", {
         targetUtilizationPercent: 90,
         cooldown: cdk.Duration.minutes(1),
@@ -154,5 +168,37 @@ export class EvernodeHostStack extends cdk.Stack {
       recordName: `www.kingevernode.${props.variables.ZONE_NAME}`,
       target: RecordTarget.fromAlias(new LoadBalancerTarget(lb)),
     });  
+
+
+
+    // Set up Admin EC2 Instance to the Evernode Instnace 
+    const securityGroupJumpHost = new SecurityGroup(this, 'securityGroupJumpHost', {
+      vpc,
+      description: 'Allow SSH access',
+      allowAllOutbound: true,
+    });
+    
+    securityGroupJumpHost.addIngressRule(
+      Peer.anyIpv4(),
+      Port.tcp(22),
+      'Allow SSH access from anywhere',
+    );
+
+    // Now all this bastion host to talk to Evernode host 
+    evernodeHostNodeSecurityGroup.addIngressRule(
+      Peer.securityGroupId(securityGroupJumpHost.securityGroupId),
+      Port.tcp(22),
+      'Allow SSH access from anywhere',
+    );
+    
+    const evernodeJumpHost = new Instance(this, 'evernodeJumpHost', {
+      vpc,
+      vpcSubnets: { subnetType: SubnetType.PUBLIC },
+      instanceType: InstanceType.of(InstanceClass.T3, InstanceSize.MICRO),
+      machineImage: machineImage,
+      securityGroup: securityGroupJumpHost,
+      keyName: props.variables.ssh_key_name
+    });
+   
   }
 }
