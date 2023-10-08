@@ -5,6 +5,11 @@ This repository contains the automation scripts for deploying the Evernode Host 
 This module is responsible for setting up the necessary infrastructure resources but does not include automation for the Evernode host configuration. In simpler terms, this module can prepare and allocate the necessary infrastructure, but it does not handle the automatic setup of the Evernode host.
 
 
+# The AWS infrastructure architecture for Evernode Hosting on AWS
+The following diagram illustrates how to host an Evernode host node on Amazon Web Services (AWS).
+
+![Alt Text](./architecture/aws-host.png)
+
 
 ## Prerequisites
 Before deploying to AWS, make sure you have completed the following steps:
@@ -48,19 +53,6 @@ let variables = {
 ```bash 
     cdk destroy
 ```
-
-
-
-
-
-
-# Evernode Host Architecture Diagram in AWS
-The following diagram illustrates how to host an Evernode host node on Amazon Web Services (AWS).
-
-![Alt Text](./architecture/aws-host.png)
-
-
-
 
 # [NOTE] 
 
