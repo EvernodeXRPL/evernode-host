@@ -29,3 +29,17 @@ Before deploying to AWS, make sure you have completed the following steps:
 The following diagram illustrates how to host an Evernode host node on Amazon Web Services (AWS).
 
 ![Alt Text](./architecture/aws-host.png)
+
+
+
+
+# [NOTE] 
+
+## To deploy the Evernode stack, you need to have prior experience with AWS Environment and understand TypeScript and AWS CDK tool. Here's a brief overview of what you need to know:
+
+AWS Environment: You should be familiar with setting up and managing AWS environments. This includes understanding how to set up AWS accounts, regions, and how to use environment variables for deployment. You'll need to declare your stack's environment, which can be done using AWS CDK's Environment class, where you specify the account and region for your stack docs.aws.amazon.com.
+TypeScript: Evernode is built with TypeScript, so you should have a solid understanding of the language. This includes knowledge of TypeScript's syntax, data types, functions, classes, and modules.
+AWS CDK Tool: AWS CDK (Cloud Development Kit) is an open-source software development framework to define cloud infrastructure in code and provision it through AWS CloudFormation. You need to understand how to use AWS CDK to define AWS resources and how to deploy these resources using the AWS CDK tool. This includes creating a new AWS CDK project, defining AWS resources in your project, and deploying your project to AWS docs.aws.amazon.com.
+By deploying the infrastructure stacks for Evernode, you will incur AWS infrastructure usage costs. These costs will depend on the resources you deploy and their usage. It's important to monitor your AWS usage and costs to avoid unexpected charges. AWS provides tools and features to help you manage and monitor your AWS costs, including AWS Cost Explorer and AWS Budgets aws.amazon.com.
+
+Please note that this is a high-level overview. Depending on your specific needs and the complexity of your deployment, you might need additional knowledge and skills.
