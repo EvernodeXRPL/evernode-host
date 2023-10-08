@@ -44,7 +44,7 @@ let variables = {
 ```
 5. You should now have Evernode host resources deployed 
 
-6. If you want to destroy the resources that you created above, you can do the following: 
+6. Then, if no longer needed, to dispose of the evernode host resources afterwards
 ```bash 
     cdk destroy
 ```
