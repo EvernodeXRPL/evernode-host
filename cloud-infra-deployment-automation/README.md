@@ -34,8 +34,12 @@ let variables = {
 
 4. Once you finished adjusting, change the directory back to cloud-infra-deployment-automation/aws and run the follwoing command
 ```bash 
-    cdk synth
-    cdk deploy 
+    $ npm install -g aws-cdk
+    $ cd evernode-host/cloud-infra-deployment-automation
+    $ npm install
+    $ cdk synth
+    $ cdk deploy
+    
 
 ```
 5. You should now have Evernode host resources deployed 
@@ -45,15 +49,7 @@ let variables = {
     cdk destroy
 ```
 
-## Useful commands
-The `cdk.json` file tells the CDK Toolkit how to execute your app.
-* `npm run build`   compile typescript to js
-* `npm run watch`   watch for changes and compile
-* `npm run test`    perform the jest unit tests
-* `cdk deploy`      deploy this stack to your default AWS account/region
-* `cdk diff`        compare deployed stack with current state
-* `cdk synth`       emits the synthesized CloudFormation template
-* `cdk destroy`     Destroy the complete evernode host infrastructures deployed 
+
 
 
 
