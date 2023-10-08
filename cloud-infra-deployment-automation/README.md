@@ -1,7 +1,7 @@
 # Implementing Automation for Evernode Host Infrastructures Deployment within the AWS Ecosystem
 This repository contains the automation scripts for deploying the Evernode Host operator on AWS using the Infrastructure as Code (IaC) approach with AWS CDK.
 
-### NOTE  
+#### NOTE  
 This module is responsible for setting up the necessary infrastructure resources but does not include automation for the Evernode host configuration. In simpler terms, this module can prepare and allocate the necessary infrastructure, but it does not handle the automatic setup of the Evernode host.
 
 
