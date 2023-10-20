@@ -1,3 +1,8 @@
+# Evernode host documentation is now at https://docs.evernode.org/en/latest/hosts/evernode-host.html
+
+-----
+obsolete:
+
 # Evernode setup for Hosts
 
 [Evernode](https://evernode.wordpress.com/) enables Hot Pocket smart contracts to be hosted on a global network of decentralized hosts through [XRP Ledger](https://xrpl.org/).
