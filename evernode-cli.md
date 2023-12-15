@@ -22,17 +22,21 @@ You can use the Evernode CLI to manage and monitor your Evernode host.
         - `<lease amount>`: Per Moment per contract lease amount to charge in Evers (EVR).
     - `evernode config rippled <server url>`
         - `<server url>`: Rippled server websocket url (wss://) you want to use to interact with XRPL.
+    - `evernode config email <email address>`
+        - `<email address>`: Contact email address for the host (this will be published on the host registry and is publicly visible to anyone).
 - `evernode governance <operation_type> <arguments (optional)>` - Manages the governance candidates related to the host.
-    - `<operation_type>` must be one of operation types: `propose`, `withdraw`, `vote`, `unvote`, `status` and `help`.
-    - `propose`, `withdraw`, `vote` and `unvote` operations require sudo.
-    - `evernode governance propose <hash file> <short name>` - Propose a new governance candidate.
+    - `<operation_type>` must be one of operation types: `propose`, `withdraw`, `vote`, `unvote`, `status`, `report` and `help`.
+    - `propose`, `withdraw`, `vote`, `unvote` and `report` operations require sudo.
+    - `withdraw`, `vote`, and `unvote` operations apply to both new hook and dud host candidate types. 
+    - Use the `propose` operation to propose new hook candidates and the `report` operation to propose dud host candidates.
+    - `evernode governance propose <hash file> <short name>` - Propose a new hook candidate.
       - `<hash file>` : Text file with the combined hashes of proposing hooks (`<governor_hook><registry_hook><heartbeat_hook>`).
     - `evernode governance withdraw <candidate id>` - Withdraw proposed governance candidate.
     - `evernode governance vote <candidate id>` - Vote for a governance candidate.
     - `evernode governance unvote <candidate id>` - Remove vote from voted governance candidate.
-      - `<candidate_id>` : This will be accessible through the candidate view on the Evernode Dashboard *(Upcoming feature)*.
     - `evernode governance status` - Get governance information of the host.
       - This also helps to find proposed and voted `candidate_id`s by the host.
+    - `evernode governance report <dud host address>` - Propose a dud host candidate using its XRPL account address. 
     - `evernode governance help` - Print the command information.
 
 - `evernode delete <instance name>` - Remove an existing smart contract instance and cancels the lease. Any payments made for lost lease duration are not refunded.
